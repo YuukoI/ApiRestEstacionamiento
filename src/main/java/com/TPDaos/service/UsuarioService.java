@@ -14,4 +14,6 @@ public interface UsuarioService {
     public Usuario updateUsuario(Usuario usuario);
 
     public void deleteUsuario(String dni);
+
+    public void agregarSaldo(Double saldo, Usuario usuario);
 }

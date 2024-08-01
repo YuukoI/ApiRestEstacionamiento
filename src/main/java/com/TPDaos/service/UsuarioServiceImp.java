@@ -86,4 +86,15 @@ public class UsuarioServiceImp implements UsuarioService{
         usuarioRepository.deleteById(dni);
     }
 
+    @Override
+    public void agregarSaldo(Double saldo, Usuario usuario) {
+        if(saldo < 0){
+            throw new RuntimeException("No se puede ingresar saldo negativo");
+        }
+        double suma = 0;
+        suma = usuario.getSaldo() + saldo;
+        usuario.setSaldo(suma);
+        usuarioRepository.save(usuario);
+    }
+
 }
